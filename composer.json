@@ -1,0 +1,40 @@
+{
+    "name": "bootsified/craft-json-decode",
+    "description": "A SUPER simple plugin that decodes JSON data for use in Craft CMS v3 templates.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft-json-decode"
+    ],
+    "support": {
+        "docs": "https://github.com/bootsified/craft-json-decode/blob/master/README.md",
+        "issues": "https://github.com/bootsified/craft-json-decode/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boots Highland",
+            "homepage": "http://boots.media"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "bootsified\\craftjsondecode\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "craft-json-decode",
+        "handle": "craft-json-decode",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/bootsified/craft-json-decode/master/CHANGELOG.md",
+        "class": "bootsified\\craftjsondecode\\Craftjsondecode"
+    }
+}
