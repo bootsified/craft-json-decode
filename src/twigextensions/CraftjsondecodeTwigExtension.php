@@ -38,47 +38,24 @@ class CraftjsondecodeTwigExtension extends \Twig_Extension
     public function getName()
     {
         return 'Craftjsondecode';
-    }
+	}
 
-    /**
-     * Returns an array of Twig filters, used in Twig templates via:
-     *
-     *      {{ 'something' | someFilter }}
-     *
-     * @return array
-     */
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('someFilter', [$this, 'someInternalFunction']),
+            new \Twig_SimpleFilter('json_decode', [$this, 'jsonDecode']),
         ];
-    }
+	}
 
-    /**
-     * Returns an array of Twig functions, used in Twig templates via:
-     *
-     *      {% set this = someFunction('something') %}
-     *
-    * @return array
-     */
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('someFunction', [$this, 'someInternalFunction']),
+            new \Twig_SimpleFunction('json_decode', [$this, 'jsonDecode']),
         ];
-    }
+	}
 
-    /**
-     * Our function called via Twig; it can do anything you want
-     *
-     * @param null $text
-     *
-     * @return string
-     */
-    public function someInternalFunction($text = null)
-    {
-        $result = $text . " in the way";
-
-        return $result;
+	public function jsonDecode($json, $assoc = false)
+	{
+        return json_decode($json, $assoc);
     }
 }
